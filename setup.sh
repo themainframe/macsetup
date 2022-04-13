@@ -1,10 +1,13 @@
 #!/bin/bash
 
-# Command line (all as one, you'll want them all anyway...)
-brew install wget openssl pkg-config zlib awscli iperf3
-
 # Oh My ZSH
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Command line (all as one, you'll want them all anyway...)
+brew install wget openssl pkg-config zlib awscli iperf3 mas
 
 # Python
 brew install python@3.9
@@ -14,8 +17,14 @@ brew install python@3.9
 # I would rather die before considering using pyenv.
 ln -s /usr/local/bin/python3.9 /usr/local/bin/python
 
-# Brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Mac App Store apps
+mas install 497799835 # Xcode
+mas install 409183694 # Keynote
+mas install 409201541 # Pages
+mas install 409203825 # Numbers
+mas install 1453365242 # P-touch editor
+mas install 1360797896 # GlanceCam
+mas install 406825478 # Telephone (SIP client)
 
 # Some --cask installs require password.
 # Do not just paste all these as a block before doing `sudo whoami` and authenticating first
